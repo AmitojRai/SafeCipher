@@ -1,4 +1,4 @@
-//Amitoj's Project
+//Amitoj's SafeCipher Project
 import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
