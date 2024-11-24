@@ -4,14 +4,16 @@ import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import java.util.Base64;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 public class SafeCipher {
 
     private static SecretKey secretKey;  //Variable for encryption key.
     private static String encryptedText; //Variable stores encrypted text.
+    private static final Logger LOGGER = Logger.getLogger(SafeCipher.class.getName()); //making instance of logger for the class
 
 
-   /**
+    /**
     * This method gives us an Advanced Encryption Standard key for encrypting and decrypting
     * @return SecretKey for AES Encrypting
     * @throws Exception if there is an error while generating the key
@@ -99,7 +101,7 @@ public class SafeCipher {
 
             scanner.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.severe("An error occurred: " + e.getMessage());  // Log the exception message
         }
     }
 }
